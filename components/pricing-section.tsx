@@ -53,13 +53,19 @@ export function PricingSection() {
           
           {/* Standard Plan - Always Visible */}
           <Card className="relative mb-6 border-2 border-blue-500 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-blue-500 px-4 py-1 text-sm font-semibold text-white">
-              Most Popular
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex gap-2">
+              <div className="rounded-full bg-red-500 px-4 py-1 text-sm font-semibold text-white">
+                50% OFF
+              </div>
+              <div className="rounded-full bg-blue-500 px-4 py-1 text-sm font-semibold text-white">
+                Most Popular
+              </div>
             </div>
             <CardHeader>
               <CardTitle className="text-2xl">{standardPlan.name}</CardTitle>
-              <div className="flex items-baseline gap-1">
-                <span className="text-4xl font-bold">{standardPlan.price}</span>
+              <div className="flex items-baseline gap-2">
+                <span className="text-2xl font-bold text-slate-400 line-through">$358</span>
+                <span className="text-4xl font-bold text-blue-600">{standardPlan.price}</span>
                 <span className="text-slate-600">{standardPlan.period}</span>
               </div>
               <CardDescription className="text-base font-medium">
@@ -96,7 +102,10 @@ export function PricingSection() {
                   <h3 className="font-semibold text-slate-900">
                     Corner Lot or Large Driveway?
                   </h3>
-                  <p className="text-sm text-slate-600">Starting at $229/month</p>
+                  <p className="text-sm text-slate-600">
+                    <span className="line-through text-slate-400">$458/month</span>{" "}
+                    <span className="text-red-600 font-semibold">50% OFF</span> - $229/month
+                  </p>
                 </div>
                 {showCornerPlan ? (
                   <ChevronUp className="h-5 w-5 text-slate-600" />
@@ -110,8 +119,12 @@ export function PricingSection() {
               <Card className="mt-4 border transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="text-2xl">{cornerPlan.name}</CardTitle>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold">{cornerPlan.price}</span>
+                  <div className="mb-2">
+                    <span className="rounded-full bg-red-500 px-3 py-1 text-xs font-semibold text-white">50% OFF</span>
+                  </div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-2xl font-bold text-slate-400 line-through">$458</span>
+                    <span className="text-4xl font-bold text-blue-600">{cornerPlan.price}</span>
                     <span className="text-slate-600">/month</span>
                   </div>
                 </CardHeader>

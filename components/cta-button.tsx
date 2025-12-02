@@ -32,13 +32,19 @@ export function CTAButton({ onClick, spotsRemaining = 12, showCountdown = false,
 
   return (
     <div className={`flex flex-col items-center gap-3 ${className}`}>
-      <Button
-        onClick={handleClick}
-        size="lg"
-        className="bg-blue-600 text-white hover:bg-blue-700 hover:scale-105 transition-transform duration-200 text-lg px-8 py-6 h-auto min-h-[48px] shadow-lg hover:shadow-xl w-full sm:w-auto"
-      >
-        Get Winter Freedom—$179/Month
-      </Button>
+      <div className="text-center">
+        <div className="mb-1 flex items-center justify-center gap-2">
+          <span className="text-sm text-slate-500 line-through">$358/month</span>
+          <span className="rounded-full bg-red-500 px-2 py-0.5 text-xs font-bold text-white">50% OFF</span>
+        </div>
+        <Button
+          onClick={handleClick}
+          size="lg"
+          className="bg-blue-600 text-white hover:bg-blue-700 hover:scale-105 transition-transform duration-200 text-lg px-8 py-6 h-auto min-h-[48px] shadow-lg hover:shadow-xl w-full sm:w-auto"
+        >
+          Get Winter Freedom—$179/Month
+        </Button>
+      </div>
       {spotsRemaining > 0 && (
         <p className="text-sm font-semibold text-slate-600">
           Only {spotsRemaining} spots remaining

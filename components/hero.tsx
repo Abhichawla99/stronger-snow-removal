@@ -23,7 +23,11 @@ export function Hero() {
           
           {/* Pricing Above Fold */}
           <div className="mb-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 p-6 inline-block">
-            <div className="flex items-baseline justify-center gap-2 mb-2">
+            <div className="mb-2 flex items-center justify-center gap-2">
+              <span className="rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white">50% OFF</span>
+            </div>
+            <div className="flex items-baseline justify-center gap-2 mb-1">
+              <span className="text-2xl font-bold text-white/60 line-through">$358</span>
               <span className="text-5xl font-bold text-white">$179</span>
               <span className="text-xl text-blue-100">/month</span>
             </div>
