@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, ChevronDown, ChevronUp } from "lucide-react"
+import { Check, ChevronDown, ChevronUp, Phone } from "lucide-react"
 import { CTAButton } from "./cta-button"
 import { STRIPE_PURCHASE_URL_CORNER } from "@/lib/constants"
 
@@ -150,9 +150,41 @@ export function PricingSection() {
             )}
           </div>
 
-          <p className="text-center text-sm text-slate-500">
+          <p className="text-center text-sm text-slate-500 mb-6">
             *Add-ons available after signup. No long-term contracts. Cancel anytime.
           </p>
+
+          {/* Custom Quote Option */}
+          <Card className="border-2 border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100">
+            <CardContent className="p-6">
+              <div className="text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="rounded-full bg-blue-100 p-3">
+                    <Phone className="h-8 w-8 text-blue-600" />
+                  </div>
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-slate-900">
+                  Need a Custom Quote?
+                </h3>
+                <p className="mb-4 text-slate-600">
+                  Commercial properties, multiple locations, or special requirements? We'll create a custom plan just for you.
+                </p>
+                <a href="tel:+15878049266">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white min-h-[48px] w-full sm:w-auto"
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Call for Custom Quote: 587-804-9266
+                  </Button>
+                </a>
+                <p className="mt-3 text-xs text-slate-500">
+                  Available Monday-Sunday, 7 AM - 9 PM
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
