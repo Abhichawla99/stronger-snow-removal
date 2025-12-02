@@ -143,7 +143,7 @@ export function PricingSection() {
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <CTAButton className="w-full" spotsRemaining={12} />
+                  <CTAButton className="w-full" spotsRemaining={12} price="$229" originalPrice="$458" />
                 </CardFooter>
               </Card>
             )}
