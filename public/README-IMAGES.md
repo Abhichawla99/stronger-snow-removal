@@ -83,3 +83,4 @@ alt="Cleared driveway proof photo from Stronger Snow Removal Services customer i
   - `components/hero.tsx` (if adding background image)
   - Any other components using placeholder images
 
+

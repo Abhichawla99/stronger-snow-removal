@@ -9,20 +9,22 @@ interface Snowflake {
   animationDelay: number
   size: number
   opacity: number
+  startY: number
 }
 
 export function Snowfall() {
   const [snowflakes, setSnowflakes] = useState<Snowflake[]>([])
 
   useEffect(() => {
-    // Generate 50 snowflakes
-    const flakes: Snowflake[] = Array.from({ length: 50 }, (_, i) => ({
+    // Generate 80 snowflakes for better coverage, starting instantly
+    const flakes: Snowflake[] = Array.from({ length: 80 }, (_, i) => ({
       id: i,
       left: Math.random() * 100, // Random horizontal position (0-100%)
-      animationDuration: 10 + Math.random() * 20, // 10-30 seconds
-      animationDelay: Math.random() * 5, // 0-5 seconds delay
+      animationDuration: 8 + Math.random() * 12, // 8-20 seconds for variety
+      animationDelay: 0, // No delay - start instantly
       size: 4 + Math.random() * 6, // 4-10px
-      opacity: 0.3 + Math.random() * 0.5, // 0.3-0.8 opacity
+      opacity: 0.4 + Math.random() * 0.4, // 0.4-0.8 opacity
+      startY: Math.random() * -100, // Start at random positions above viewport for instant visibility
     }))
 
     setSnowflakes(flakes)
@@ -33,12 +35,13 @@ export function Snowfall() {
       {snowflakes.map((flake) => (
         <div
           key={flake.id}
-          className="absolute top-0 text-white select-none"
+          className="absolute text-white select-none"
           style={{
             left: `${flake.left}%`,
+            top: `${flake.startY}%`,
             fontSize: `${flake.size}px`,
             opacity: flake.opacity,
-            animation: `snowfall ${flake.animationDuration}s linear ${flake.animationDelay}s infinite`,
+            animation: `snowfall ${flake.animationDuration}s linear 0s infinite`,
           }}
         >
           ❄
