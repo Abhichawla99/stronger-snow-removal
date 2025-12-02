@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check, ChevronDown, ChevronUp } from "lucide-react"
 import { CTAButton } from "./cta-button"
+import { STRIPE_PURCHASE_URL_CORNER } from "@/lib/constants"
 
 const standardPlan = {
   name: "Standard Plan",
@@ -143,7 +144,7 @@ export function PricingSection() {
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <CTAButton className="w-full" spotsRemaining={12} price="$229" originalPrice="$458" />
+                  <CTAButton className="w-full" spotsRemaining={12} price="$229" originalPrice="$458" stripeUrl={STRIPE_PURCHASE_URL_CORNER} />
                 </CardFooter>
               </Card>
             )}

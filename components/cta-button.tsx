@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
-import { STRIPE_PURCHASE_URL } from "@/lib/constants"
+import { STRIPE_PURCHASE_URL_STANDARD } from "@/lib/constants"
 
 interface CTAButtonProps {
   onClick?: () => void
@@ -11,9 +11,10 @@ interface CTAButtonProps {
   className?: string
   price?: string
   originalPrice?: string
+  stripeUrl?: string
 }
 
-export function CTAButton({ onClick, spotsRemaining = 12, showCountdown = false, className = "", price = "$179", originalPrice = "$358" }: CTAButtonProps) {
+export function CTAButton({ onClick, spotsRemaining = 12, showCountdown = false, className = "", price = "$179", originalPrice = "$358", stripeUrl }: CTAButtonProps) {
   const [hoursLeft, setHoursLeft] = useState(48)
 
   useEffect(() => {
@@ -29,7 +30,8 @@ export function CTAButton({ onClick, spotsRemaining = 12, showCountdown = false,
     if (onClick) {
       onClick()
     } else {
-      window.open(STRIPE_PURCHASE_URL, "_blank")
+      const url = stripeUrl || STRIPE_PURCHASE_URL_STANDARD
+      window.open(url, "_blank")
     }
   }
 
