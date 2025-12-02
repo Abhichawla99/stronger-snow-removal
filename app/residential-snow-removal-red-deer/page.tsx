@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Check, Home } from "lucide-react"
+import { STRIPE_PURCHASE_URL } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Residential Snow Removal Red Deer | Home Snow Clearing Service",
@@ -29,11 +30,11 @@ export default function ResidentialSnowRemoval() {
           <p className="text-xl text-blue-100 mb-6">
             Perfect for busy homeowners, seniors, and families who want reliable snow removal.
           </p>
-          <Link href="/#pricing">
+          <a href={STRIPE_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
               Get Started
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -96,11 +97,11 @@ export default function ResidentialSnowRemoval() {
 
           <div className="bg-blue-50 border-2 border-blue-500 p-6 rounded-lg text-center">
             <h2 className="text-2xl font-bold mb-4">Ready for Residential Snow Removal?</h2>
-            <Link href="/#pricing">
+            <a href={STRIPE_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
                 View Residential Plans
               </Button>
-            </Link>
+            </a>
             <p className="text-sm text-slate-600 mt-4">
               Starting at $179/month. Call <a href="tel:+15878049266" className="text-blue-600 font-semibold">587-804-9266</a> for questions.
             </p>

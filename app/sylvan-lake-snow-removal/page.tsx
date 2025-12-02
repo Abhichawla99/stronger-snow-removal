@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Check, MapPin } from "lucide-react"
+import { STRIPE_PURCHASE_URL } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Sylvan Lake Snow Removal Service | Professional & Reliable | Stronger Snow Removal",
@@ -26,11 +27,11 @@ export default function SylvanLakeSnowRemoval() {
           <p className="text-xl text-blue-100 mb-6">
             Reliable snow removal for Sylvan Lake homeowners. Never worry about shoveling again.
           </p>
-          <Link href="/#pricing">
+          <a href={STRIPE_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
               Get Started Today
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -101,11 +102,11 @@ export default function SylvanLakeSnowRemoval() {
 
           <div className="bg-blue-50 border-2 border-blue-500 p-6 rounded-lg text-center">
             <h2 className="text-2xl font-bold mb-4">Ready for Sylvan Lake Snow Removal Service?</h2>
-            <Link href="/#pricing">
+            <a href={STRIPE_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
                 Reserve Your Spot
               </Button>
-            </Link>
+            </a>
             <p className="text-sm text-slate-600 mt-4">
               Call <a href="tel:+15878049266" className="text-blue-600 font-semibold">587-804-9266</a> or <Link href="/red-deer-snow-removal" className="text-blue-600 hover:underline">view our main Red Deer service page</Link>
             </p>

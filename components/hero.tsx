@@ -2,10 +2,11 @@
 
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
+import { STRIPE_PURCHASE_URL } from "@/lib/constants"
 
 export function Hero() {
-  const scrollToPricing = () => {
-    document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })
+  const handlePurchase = () => {
+    window.open(STRIPE_PURCHASE_URL, "_blank")
   }
 
   return (
@@ -37,7 +38,7 @@ export function Hero() {
           {/* Single CTA with Urgency */}
           <div className="mb-6">
             <Button
-              onClick={scrollToPricing}
+              onClick={handlePurchase}
               size="lg"
               className="bg-white text-blue-700 hover:bg-blue-50 hover:scale-105 transition-transform duration-200 text-lg px-8 py-6 h-auto shadow-lg hover:shadow-xl min-h-[48px] w-full sm:w-auto"
             >

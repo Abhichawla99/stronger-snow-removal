@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Snowflake, Menu, X, Phone } from "lucide-react"
+import { STRIPE_PURCHASE_URL } from "@/lib/constants"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -66,7 +67,7 @@ export function Header() {
               FAQ
             </button>
             <Button
-              onClick={() => scrollToSection("pricing")}
+              onClick={() => window.open(STRIPE_PURCHASE_URL, "_blank")}
               className="bg-blue-600 text-white hover:bg-blue-700 min-h-[48px]"
             >
               Get Winter Freedom
@@ -118,7 +119,7 @@ export function Header() {
               </button>
               <div className="px-4">
                 <Button
-                  onClick={() => scrollToSection("pricing")}
+                  onClick={() => window.open(STRIPE_PURCHASE_URL, "_blank")}
                   className="w-full bg-blue-600 text-white hover:bg-blue-700 min-h-[48px]"
                 >
                   Get Winter Freedom

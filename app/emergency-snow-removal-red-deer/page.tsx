@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Check, AlertCircle, Phone } from "lucide-react"
+import { STRIPE_PURCHASE_URL } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Emergency Snow Removal Red Deer | 24/7 Snow Clearing Service",
@@ -79,11 +80,11 @@ export default function EmergencySnowRemoval() {
             <p className="text-slate-700 mb-4">
               The best way to avoid emergency snow removal situations is with our regular subscription service. We automatically clear your property every time it snows, so you never have to worry about urgent clearing needs.
             </p>
-            <Link href="/#pricing">
+            <a href={STRIPE_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
               <Button className="bg-blue-600 text-white hover:bg-blue-700">
                 View Subscription Plans
               </Button>
-            </Link>
+            </a>
           </section>
 
           <div className="bg-red-50 border-2 border-red-500 p-6 rounded-lg text-center">

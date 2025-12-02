@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Check, Building2 } from "lucide-react"
+import { STRIPE_PURCHASE_URL } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Commercial Snow Removal Red Deer | Business Snow Clearing Services",
@@ -29,11 +30,11 @@ export default function CommercialSnowRemoval() {
           <p className="text-xl text-blue-100 mb-6">
             Keep your business accessible all winter with professional commercial snow removal.
           </p>
-          <Link href="/#pricing">
+          <a href={STRIPE_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
               Get Commercial Quote
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
 

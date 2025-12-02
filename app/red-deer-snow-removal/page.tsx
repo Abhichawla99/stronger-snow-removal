@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Check, Snowflake, Clock, Shield } from "lucide-react"
 import { Header } from "@/components/header"
 import { Snowfall } from "@/components/snowfall"
+import { STRIPE_PURCHASE_URL } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Red Deer Snow Removal Service | Professional & Reliable | Stronger Snow Removal",
@@ -30,11 +31,11 @@ export default function RedDeerSnowRemoval() {
           <p className="text-xl text-blue-100 mb-6">
             Reliable, insured snow removal for Red Deer homeowners. Never shovel again with our flat monthly subscription service.
           </p>
-          <Link href="/#pricing">
+          <a href={STRIPE_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
               Get Started Today
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -158,11 +159,11 @@ export default function RedDeerSnowRemoval() {
             <p className="text-slate-700 mb-6">
               Join 87+ Red Deer homeowners who trust Stronger Snow Removal Services.
             </p>
-            <Link href="/#pricing">
+            <a href={STRIPE_PURCHASE_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
                 Reserve Your Spot - Only 12 Left
               </Button>
-            </Link>
+            </a>
             <p className="text-sm text-slate-600 mt-4">
               Call us at <a href="tel:+15878049266" className="text-blue-600 font-semibold">587-804-9266</a> for immediate service
             </p>

@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
+import { STRIPE_PURCHASE_URL } from "@/lib/constants"
 
 interface CTAButtonProps {
   onClick?: () => void
@@ -26,7 +27,7 @@ export function CTAButton({ onClick, spotsRemaining = 12, showCountdown = false,
     if (onClick) {
       onClick()
     } else {
-      document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })
+      window.open(STRIPE_PURCHASE_URL, "_blank")
     }
   }
 
