@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Quote, Clock } from "lucide-react"
 import { StructuredData } from "@/components/structured-data"
@@ -66,24 +67,44 @@ export function Testimonials() {
             </p>
           </div>
           
-          {/* Before/After Photo Placeholder */}
+          {/* Before/After Photos */}
           <div className="mb-12 grid gap-6 md:grid-cols-2">
-            <Card className="overflow-hidden">
-              <div className="aspect-video bg-slate-200 flex items-center justify-center" role="img" aria-label="Before snow removal - snow-covered driveway in Red Deer requiring professional snow clearing service">
-                <div className="text-center p-4">
-                  <p className="text-sm font-semibold text-slate-600 mb-2">BEFORE</p>
-                  <p className="text-xs text-slate-500">Snow-covered driveway</p>
-                  <p className="text-xs text-slate-400 mt-2">Dec 15, 2024 • 6:15 AM</p>
+            <Card className="overflow-hidden relative">
+              <div className="relative aspect-video">
+                <Image
+                  src="/images/before.png"
+                  alt="Before snow removal - snow-covered driveway in Red Deer requiring professional snow clearing service"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+                <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded font-semibold text-sm">
+                  BEFORE
+                </div>
+                <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-2 rounded text-xs">
+                  <p className="font-medium">Snow-covered driveway</p>
+                  <p className="text-white/80">Dec 15, 2024 • 6:15 AM</p>
                 </div>
               </div>
             </Card>
-            <Card className="overflow-hidden">
-              <div className="aspect-video bg-green-50 flex items-center justify-center border-2 border-green-500" role="img" aria-label="After snow removal - fully cleared driveway by Stronger Snow Removal Services in Red Deer, completed in 68 minutes">
-                <div className="text-center p-4">
-                  <p className="text-sm font-semibold text-green-700 mb-2">AFTER</p>
-                  <p className="text-xs text-green-600">Fully cleared driveway</p>
-                  <p className="text-xs text-green-500 mt-2">Dec 15, 2024 • 7:23 AM</p>
-                  <div className="mt-2 flex items-center justify-center gap-1 text-xs text-green-600">
+            <Card className="overflow-hidden relative border-2 border-green-500">
+              <div className="relative aspect-video">
+                <Image
+                  src="/images/after.png"
+                  alt="After snow removal - fully cleared driveway by Stronger Snow Removal Services in Red Deer, completed in 68 minutes"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+                <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded font-semibold text-sm">
+                  AFTER
+                </div>
+                <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-2 rounded text-xs">
+                  <p className="font-medium">Fully cleared driveway</p>
+                  <p className="text-white/80">Dec 15, 2024 • 7:23 AM</p>
+                  <div className="mt-1 flex items-center gap-1 text-green-300">
                     <Clock className="h-3 w-3" />
                     <span>Cleared in 68 minutes</span>
                   </div>

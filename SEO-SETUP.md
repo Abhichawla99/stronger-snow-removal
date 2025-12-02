@@ -81,7 +81,7 @@
 
 ## Next Steps for SEO
 
-1. **Domain**: Using `https://stronger.ac` in:
+1. **Update Domain**: Replace `https://strongersnowremoval.com` with your actual domain in:
    - `app/sitemap.ts`
    - `app/robots.ts`
    - `app/layout.tsx` (metadataBase)
