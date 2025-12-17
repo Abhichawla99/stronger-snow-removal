@@ -15,13 +15,13 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Winter Gift Pass - Perfect Gift for Parents | Stronger Snow Removal",
+  title: "Winter Gift Pass - Perfect Gift for Parents | Stronger Snow Removal Calgary & Airdrie",
   description:
-    "Give the gift of a stress-free winter! $499 for unlimited snow removal until March 31st with priority support. The perfect Christmas gift for parents.",
+    "Give the gift of a stress-free winter! $499 for unlimited snow removal until March 31st with priority support in Calgary & Airdrie. The perfect Christmas gift for parents.",
   openGraph: {
     title: "Winter Gift Pass - Perfect Christmas Gift | Stronger Snow Removal",
     description:
-      "Unlimited snow removal until March 31st + priority support for $499. Show your parents you care this holiday season.",
+      "Unlimited snow removal until March 31st + priority support for $499 in Calgary & Airdrie. Show your parents you care this holiday season.",
   },
 }
 
@@ -185,7 +185,7 @@ export default function GiftPassPage() {
               <div className="text-sm text-gray-600">Satisfaction Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-1">6+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-1">2</div>
               <div className="text-sm text-gray-600">Cities Served</div>
             </div>
           </div>
@@ -235,7 +235,7 @@ export default function GiftPassPage() {
               even woke up. Can't recommend this enough!"
             </p>
             <p className="font-semibold text-gray-900">
-              - Margaret T., Red Deer
+              - Margaret T., Calgary
             </p>
           </div>
         </div>
@@ -365,8 +365,7 @@ export default function GiftPassPage() {
                   What areas do you serve?
                 </h3>
                 <p className="text-gray-600">
-                  We serve Red Deer, Sylvan Lake, Blackfalds, Penhold, Springbrook,
-                  and Lacombe. If you're unsure about your specific address, just
+                  We serve Calgary and Airdrie. If you're unsure about your specific address, just
                   give us a call!
                 </p>
               </div>
