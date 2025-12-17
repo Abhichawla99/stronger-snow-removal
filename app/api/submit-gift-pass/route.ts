@@ -13,39 +13,39 @@ export async function POST(request: Request) {
       )
     }
 
-    // Get Google Sheets credentials from environment variables
-    const GOOGLE_SHEETS_URL = process.env.GOOGLE_SHEETS_WEBHOOK_URL
-
-    if (!GOOGLE_SHEETS_URL) {
-      console.error("Google Sheets webhook URL not configured")
-      // Still return success to not block user from proceeding to payment
-      return NextResponse.json({ success: true })
+    // Prepare complete payload
+    const payload = {
+      name,
+      email,
+      phone,
+      address,
+      city,
+      timestamp,
+      product: "Gift Pass - $499",
+      price: 499,
+      type: "gift_pass",
+      source: "landing_page",
     }
 
-    // Send data to Google Sheets via webhook
+    // Send data to n8n webhook
+    const N8N_WEBHOOK_URL = "https://abhixchawla.app.n8n.cloud/webhook/snowsignup"
+
     try {
-      const response = await fetch(GOOGLE_SHEETS_URL, {
+      const response = await fetch(N8N_WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          address,
-          city,
-          timestamp,
-          product: "Gift Pass - $499",
-        }),
+        body: JSON.stringify(payload),
       })
 
       if (!response.ok) {
-        console.error("Failed to send to Google Sheets:", response.statusText)
+        console.error("Failed to send to n8n webhook:", response.statusText)
+        // Still return success to not block user from proceeding to payment
       }
     } catch (error) {
-      console.error("Error sending to Google Sheets:", error)
-      // Don't block the user even if Google Sheets fails
+      console.error("Error sending to n8n webhook:", error)
+      // Don't block the user even if webhook fails
     }
 
     return NextResponse.json({ success: true })
