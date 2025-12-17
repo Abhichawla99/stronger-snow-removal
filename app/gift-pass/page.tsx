@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { GiftPassForm } from "@/components/gift-pass-form"
 import { Snowfall } from "@/components/snowfall"
 import { StructuredData } from "@/components/structured-data"
+import { ScrollToFormButton } from "@/components/scroll-to-form-button"
 import {
   Gift,
   Sparkles,
@@ -384,16 +385,9 @@ export default function GiftPassPage() {
           <p className="mb-8 text-xl text-red-100 max-w-2xl mx-auto">
             Only 8 gift passes available. Secure yours before they're gone.
           </p>
-          <a
-            href="#form"
-            onClick={(e) => {
-              e.preventDefault()
-              document.querySelector("form")?.scrollIntoView({ behavior: "smooth" })
-            }}
-            className="inline-block rounded-lg bg-white px-8 py-4 text-lg font-bold text-red-600 hover:bg-blue-50 transition-colors shadow-lg"
-          >
+          <ScrollToFormButton className="inline-block rounded-lg bg-white px-8 py-4 text-lg font-bold text-red-600 hover:bg-blue-50 transition-colors shadow-lg">
             Claim Your Gift Pass →
-          </a>
+          </ScrollToFormButton>
         </div>
       </section>
     </main>
